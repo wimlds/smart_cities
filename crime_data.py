@@ -29,7 +29,7 @@ def crime_frame(file):
         check_pct = [i for i in range(0,124)]
         check_pct.append("DOC")
         df = df[df["PCT"].isin(check_pct)].fillna(0)
-        df["file_type"] = temp
+        df["crime_category"] = temp
         frame_list.append(df)
 
 
@@ -47,11 +47,11 @@ def main(input, output):
     total = [s for s in whole_frame.CRIME.unique() if "TOTAL" in s]
     name.extend(total)
     for prct in whole_frame.PCT.unique():
-        for types in whole_frame.file_type.unique():
+        for types in whole_frame.crime_category.unique():
             for ct in name:
                 new_idx.append((prct, types, ct))
 
-    whole_frame.set_index(['PCT', "file_type", 'CRIME'], inplace=True)
+    whole_frame.set_index(['PCT', "crime_category", 'CRIME'], inplace=True)
 
 
     whole_frame.reindex(new_idx).dropna().to_excel(sys.argv[2]+".xls")
