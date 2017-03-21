@@ -1,3 +1,6 @@
 [submodule "WIMLDSSmartCities"]
 	path = WIMLDSSmartCities
 	url = https://github.com/fedhere/WIMLDSSmartCities/
+[submodule "uber-tlc-foil-response"]
+	path = uber-tlc-foil-response
+	url = https://github.com/fivethirtyeight/uber-tlc-foil-response.git
