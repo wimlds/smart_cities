@@ -1,0 +1,15 @@
+5 W 37th St is right between Grand Central and Penn Station: 40.7508860, -73.9839130
+
+Penn Station : 40.7505680, -73.9935190
+5 W 37th St  : 40.7508860, -73.9839130
+Grand Central: 40.7527260, -73.9772290
+
+New York Stock Exchange is at  11 Wall St: 40.7068660, -74.0113190 
+1 Battery Pl (southern tip of fidi):       40.7033850, -74.0137830
+
+PICKUP : Penn Station + Grand Central : 40.7508860 ± 0.002, -73.9839130 ± 0.01
+DROPOFF: NYSE + 1 Battery Place       : 40.7048660 ± 0.0021, -74.0127830 ± 0.002
+
+select * from `bigquery-public-data.new_york.tlc_yellow_trips_2016` where ((pickup_latitude between (40.7508860 - 0.002) and (40.7508860 + 0.002)) and (pickup_longitude between (-73.9839130 - 0.01) and (-73.9839130 + 0.01)) and (dropoff_latitude between (40.7048660 - 0.0021) and (40.7048660 + 0.0021)) and (dropoff_longitude between (-74.0127830 - 0.002) and (-74.0127830 + 0.002)));
+
+select pickup_latitude, pickup_longitude, dropoff_latitude, dropoff_longitude from `bigquery-public-data.new_york.tlc_yellow_trips_2016` where ((pickup_latitude between (40.7508860 - 0.002) and (40.7508860 + 0.002)) and (pickup_longitude between (-73.9839130 - 0.01) and (-73.9839130 + 0.01)) and (dropoff_latitude between (40.7048660 - 0.0021) and (40.7048660 + 0.0021)) and (dropoff_longitude between (-74.0127830 - 0.002) and (-74.0127830 + 0.002)));
